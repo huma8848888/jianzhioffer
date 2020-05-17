@@ -23,7 +23,8 @@ public class Algorithm {
         BinaryNode node10 = new BinaryNode(10, node9, node11);
         BinaryNode node8 = new BinaryNode(8, node6, node10);
 //        printBinaryTreeHorizontal(node8);
-        printBinaryTreeWithQueue(node8);
+//        printBinaryTreeWithQueue(node8);
+        printBinaryTreeWithQueueZigZag(node8);
     }
 
     private static boolean isHeaderPrinted = false;
@@ -52,7 +53,6 @@ public class Algorithm {
 
     //采用队列实现二叉树的广度优先遍历
     private static final Queue<BinaryNode> queue = new LinkedList<>();
-
     private static void printBinaryTreeWithQueue(BinaryNode head) {
         BinaryNode node = head;
         queue.add(node);
@@ -66,5 +66,38 @@ public class Algorithm {
                 queue.add(header.rightNode);
             }
         }
+    }
+
+    //之字形打印二叉树，使用队列的解法
+    private static void printBinaryTreeWithQueueZigZag(BinaryNode head) {
+        if (head == null) {
+            return;
+        }
+        BinaryNode node = head;
+        queue.add(node);
+        boolean isForward = false;//是否从左往右打印
+        while (!queue.isEmpty()) {
+            BinaryNode header = queue.poll();
+            System.out.printf(header.data + "");
+            if (isForward) {
+                if (header.leftNode != null) {
+                    queue.add(header.leftNode);
+                }
+                if (header.rightNode != null) {
+                    queue.add(header.rightNode);
+                }
+                isForward = false;
+            } else {
+                if (header.rightNode != null) {
+                    queue.add(header.rightNode);
+                }
+                if (header.leftNode != null) {
+                    queue.add(header.leftNode);
+                }
+                isForward = true;
+            }
+        }
+
+
     }
 }
