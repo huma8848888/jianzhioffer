@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="137122de-54a4-419d-ae37-deb0ea587e22" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jianzhioffer.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/java/Algorithm.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1c3x4MmthZo7f9S4QGlp7LcBqir" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/java" />
+    </key>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="137122de-54a4-419d-ae37-deb0ea587e22" name="Default Changelist" comment="" />
+      <created>1589770885534</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1589770885534</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="118" y="140" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1589771896037">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="118" y="140" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1440.900/1440.0.1920.1080@0.0.1440.900" timestamp="1589771896037" />
+    <state x="399" y="235" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1589771895722">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="399" y="235" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1440.900/1440.0.1920.1080@0.0.1440.900" timestamp="1589771895722" />
+    <state x="569" y="346" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1589770965531">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="569" y="346" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1440.900/1440.0.1920.1080@0.0.1440.900" timestamp="1589770965531" />
+    <state x="416" y="216" key="EnvironmentVariablesDialog" timestamp="1589770928449">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="416" y="216" key="EnvironmentVariablesDialog/0.0.1440.900/1440.0.1920.1080@0.0.1440.900" timestamp="1589770928449" />
+  </component>
+</project>
