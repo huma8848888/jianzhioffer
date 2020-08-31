@@ -1,88 +1,84 @@
+import java.util.Stack;
+
 public class Algorithm {
+    static class Node {
+        int val;
+        Node left;
+        Node right;
+
+        public Node(int val) {
+            this.val = val;
+        }
+    }
+
     public static void main(String[] args) {
-
-        String numUp = "123424234";
-        String numDown = "765456745674";
-        int k = 0;
-        k++;
-        System.out.printf(k + "个");
-//        System.out.printf(bigNumPlus(numUp, numDown));
-
+        Node node1 = new Node(1);
+        Node node2 = new Node(2);
+        Node node3 = new Node(3);
+        Node node4 = new Node(4);
+        Node node5 = new Node(5);
+        Node node6 = new Node(6);
+        Node node7 = new Node(7);
+        node1.left = node2;
+        node1.right = node3;
+        node2.left = node4;
+        node2.right = node5;
+        node3.left = node6;
+        node3.right = node7;
+//        preOrder(node1);
+//        midOrder(node1);
+        postOrder(node1);
     }
 
-    //算法17，用字符串模拟数位不断上升的过程
-    //例如，打印从1 到3位数字中的最大数字
-    public static void printNtoNnum(int maxDigits) {
-        for (int i = 0; i < maxDigits; i++) {
-
+    static void preOrder(Node head) {
+        //将头结点压栈，然后弹出栈顶，并将栈顶的右节点和左节点压栈
+        Stack<Node> stack = new Stack<>();
+        stack.add(head);
+        Node node = head;
+        while (!stack.isEmpty()) {
+            node = stack.pop();
+            if (node.right != null)
+                stack.push(node.right);
+            if (node.left != null)
+                stack.push(node.left);
+            System.out.print(node.val);
         }
     }
 
-
-    //算法17题的扩充，用字符串模拟两个大数相加
-    public static String bigNumPlus(String numUp, String numDown) {
-
-        if (isEmpty(numUp) || isEmpty(numDown)) {
-            return "";
-        }
-        for (int i = 0; i < numUp.length(); i++) {
-            if (!Character.isDigit(numUp.charAt(i))) {
-                return "";
+    static void midOrder(Node head) {
+        //一直遍历到左子节点为空，然后弹出栈顶，将栈顶的右节点压栈，知道右节点的左子节点为空
+        Stack<Node> stack = new Stack<>();
+        Node node = head;
+        while (!stack.isEmpty() || node != null) {
+            while (node != null) {
+                stack.push(node);
+                node = node.left;
+            }
+            if (!stack.isEmpty()) {
+                Node pop = stack.pop();
+                System.out.print(pop.val);
+                node = pop.right;
             }
         }
-
-        for (int j = 0; j < numDown.length(); j++) {
-            if (!Character.isDigit(numDown.charAt(j))) {
-                return "";
-            }
-        }
-        //将两个数进行补齐
-        if (numUp.length() != numDown.length()) {
-            if (numUp.length() > numDown.length()) {
-                numDown = buqi(numDown, numUp.length());
-            } else {
-                numUp = buqi(numUp, numDown.length());
-            }
-        }
-        //将要计算的长度
-        int length = numDown.length();
-        int jinweishu = 0;
-        String result = "";
-        for (int i = length - 1; i >= 0; i--) {
-            int temp = 0;
-            temp = Integer.valueOf(numUp.charAt(i) + "") + Integer.valueOf(numDown.charAt(i) + "") + jinweishu;
-            if (temp >= 10) {
-                jinweishu = 1;
-                result = qianAppend(result, temp % 10 + "");
-            } else {
-                result = qianAppend(result, temp + "");
-                jinweishu = 0;
-            }
-        }
-        return qianAppend(result, jinweishu + "");
     }
 
-    private static String qianAppend(String result, String num) {
-        return num.concat(result);
-    }
-
-    //str：被补齐的字符串
-    //length：将要补齐到的长度
-    private static String buqi(String str, int length) {
-        if (str.length() > length) {
-            return "";
+    static void postOrder(Node head) {
+        //先压栈，然后将栈顶弹出，放入out中，然后将弹出节点的左右节点分别放入in中
+        Stack<Node> in = new Stack<>();
+        Stack<Node> out = new Stack<>();
+        in.push(head);
+        while (!in.isEmpty()) {
+            Node node = in.pop();
+            out.push(node);
+            if (node.left != null)
+                in.push(node.left);
+            if (node.right != null)
+                in.push(node.right);
         }
-        String bain = "";
-        int lengthCha = length - str.length();
-        for (int i = 0; i < lengthCha; i++) {
-            bain = bain + "0";
+
+        while (!out.isEmpty()) {
+            System.out.print(out.pop().val);
         }
-        return bain.concat(str);
-    }
-
-    private static boolean isEmpty(String str) {
-
-        return str == null || str.length() == 0;
 
     }
 }
